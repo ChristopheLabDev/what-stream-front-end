@@ -3,14 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContentRecordComponent } from './content-record/content-record.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageCardsComponent } from './pages/page-cards/page-cards.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContentRecordComponent,
+    NavBarComponent,
+    PageAccueilComponent,
+    PageCardsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
