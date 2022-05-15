@@ -8,6 +8,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageCardsComponent } from './pages/page-cards/page-cards.component';
+import { PageNewContentComponent } from './pages/page-new-content/page-new-content.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PageCardsComponent } from './pages/page-cards/page-cards.component';
     ContentRecordComponent,
     NavBarComponent,
     PageAccueilComponent,
-    PageCardsComponent
+    PageCardsComponent,
+    PageNewContentComponent
   ],
   imports: [
     BrowserModule,
