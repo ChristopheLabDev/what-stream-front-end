@@ -1,0 +1,85 @@
+<h1>Sign up</h1>
+<form class="mt-5 col-md-6 m-auto" [formGroup]="signUpForm" (ngSubmit)="onSubmitForm()">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input placeholder="entrer votre username" formControlName="userName" type="text" class="form-control"
+                aria-describedby="userHelp" id="username">
+        </div>
+        <div>
+            Champs touched : {{signUpForm.controls['userName'].touched}}
+        </div>
+        <div>
+            Champs modifié : {{signUpForm.controls['userName'].dirty}}
+        </div>
+        <div>
+            Champs non-modifié : {{signUpForm.controls['userName'].pristine}}
+        </div>
+        <div>
+            Champs invalide : {{signUpForm.controls['userName'].invalid}}
+        </div>
+        <div id="userHelp" class="form-text alert-danger"
+            *ngIf="signUpForm.controls['userName'].touched && signUpForm.controls['userName'].invalid ">
+            L'adresse email est obligatoire
+        </div>
+        <div class="form-text alert-danger"
+            *ngIf="signUpForm.controls['userName'].touched && signUpForm.controls['userName'].getError('email') ">
+            Le format de l'email n'est pas correct ... 😢
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input formControlName="password" type="password" id="password" class="form-control"
+            aria-describedby="passwordHelpBlock">
+
+        <div>
+            Password invalid : {{ signUpForm.controls['password'].invalid}}
+        </div>
+        <div>
+            Password a une erreur de longueur minimum :
+            {{ signUpForm.controls['password'].getError('minlength') | json }}
+        </div>
+        <div>
+            Password a une erreur de longueur maximum :
+            {{ signUpForm.controls['password'].getError('maxlength') | json }}
+        </div>
+        <div *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].getError('required')"
+            class="form-text alert-danger">
+            Le mot de passe est obligatoire
+        </div>
+        <div *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].getError('minlength')"
+            class="form-text alert-danger">
+            Le mot de passe doit avoir une longueur min de 8 caractères
+        </div>
+        <div *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].getError('maxlength')"
+            class="form-text alert-danger">
+            Le mot de passe ne doit pas dépasser 12 caractères
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="confirm-password" class="form-label">Confirm password</label>
+        <input formControlName="confirmPassword" type="password" id="confirm-password" class="form-control">
+        <div>
+            Mot de passe égaux error : {{signUpForm.getError('mismatch') | json}}
+        </div>
+        <div class="form-text alert-danger"
+            *ngIf="signUpForm.controls['confirmPassword'].dirty && signUpForm.getError('mismatch')">
+            Les mots de passe doivent être similaires 😉
+        </div>
+    </div>
+    <div class="d-grid col-12 col-md-2 ms-auto">
+        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary text-nowrap">Sign up</button>
+    </div>
+    <div>
+        Le formulaire est-il invalide ? : {{ signUpForm.invalid }}
+    </div>
+</form>
+<!--------------------------------------------
+  Le code ci-dessous permet simplement de 
+  visualiser les données du formulaire en live
+  c'est comme un console.log() dans le template
+---------------------------------------------->
+<div>
+    {{ signUpForm.value | json}}
+</div>

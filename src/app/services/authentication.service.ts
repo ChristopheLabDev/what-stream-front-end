@@ -16,18 +16,16 @@ export class AuthenticationService {
 
   public registerUser(username: string, password: string){
     const body = {
-      "email": username,
+      "username": username,
       "password": password,
-      "firstName": "Test",
-      "lastName": "Test",
-      "pseudo": "test"
     };
-    return this.http.post(`${this.urlApi}/api/auth/register`, body );
+    // return this.http.post(`${this.urlApi}/api/auth/register`, body );
+    return this.http.post(`${this.urlApi}/users/sign-up`, body );
   }
 
   public logUser(username: string, password: string){
     const body = {
-      "email": username,
+      "username": username,
       "password": password
     };
     return this.http.post(`${this.urlApi}/users/sign-in`, body );

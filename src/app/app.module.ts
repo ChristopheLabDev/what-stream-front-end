@@ -9,6 +9,10 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
 import { HttpClientModule } from '@angular/common/http';
 import { PageCardsComponent } from './pages/page-cards/page-cards.component';
 import { PageNewContentComponent } from './pages/page-new-content/page-new-content.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageMyContentsComponent } from './pages/page-my-contents/page-my-contents.component';
+import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
+import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,17 @@ import { PageNewContentComponent } from './pages/page-new-content/page-new-conte
     NavBarComponent,
     PageAccueilComponent,
     PageCardsComponent,
-    PageNewContentComponent
+    PageNewContentComponent,
+    PageMyContentsComponent,
+    PageSignInComponent,
+    PageSignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

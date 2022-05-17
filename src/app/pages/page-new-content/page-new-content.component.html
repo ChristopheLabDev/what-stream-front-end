@@ -6,7 +6,22 @@
             <input placeholder="entrer le nom du contenu" formControlName="name" type="text" class="form-control"
                 aria-describedby="userHelp" id="name">
         </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Durée</label>
+            <div class="input-group">
+                <input placeholder="entrer la durée du contenu" formControlName="duration" type="number" class="form-control"
+                    aria-describedby="userHelp" id="duration">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <div class="input-group">
+                <input placeholder="entrer la description du contenu" formControlName="description" type="text" class="form-control"
+                    aria-describedby="userHelp" id="description">
+            </div>
+        </div>
         <div class="d-grid col-12 col-md-2 ms-auto">
             <button [disabled]="newContentForm.invalid" type="submit" class="btn btn-primary text-nowrap">Créer</button>
         </div>
+    </div>
 </form>
