@@ -9,7 +9,7 @@ import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component
 
 const routes: Routes = [
   { path: '', component: PageAccueilComponent},
-  { path: 'home', component: ContentRecordComponent },
+  { path: 'content', component: ContentRecordComponent },
   // { path: 'new-content', canActivate:[AuthGuard], component: PageNewContentComponent },
   { path: 'new-content',  component: PageNewContentComponent },
   { path: 'sign-in',  component: PageSignInComponent },

@@ -35,7 +35,7 @@ export class PageNewContentComponent implements OnInit {
 
     this.contentService.createNewContent(newContent).subscribe(() => {
       console.log("le contenu a été créé")
-      this.router.navigateByUrl('my-contents')
+      this.router.navigateByUrl('/my-contents')
     });
   }
 }
