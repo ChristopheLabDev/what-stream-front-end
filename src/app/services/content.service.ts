@@ -16,7 +16,7 @@ export class ContentService {
     const token = localStorage.getItem("token");
 
     return this.http.post(
-      `${this.urlApi}/content`,
+      `${this.urlApi}/content/records`,
       newContent,
       {headers : { Authorization : `Bearer ${token}`}}
     )

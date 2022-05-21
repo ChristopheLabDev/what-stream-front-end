@@ -20,22 +20,31 @@ export class PageNewContentComponent implements OnInit {
   ngOnInit(): void {
     this.newContentForm = this.fb.group({
       name: ['', Validators.required],
-      duration: [ , Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      author: ['', Validators.required],
+      releasedate: [''],
+      duration: ['', Validators.required],
+      picturelink: [''],
+      rate: [''],
     })
   }
   onSubmitForm() {
     console.log(this.newContentForm.value);
     const newContent = new Content(
       this.newContentForm.value.name,
+      this.newContentForm.value.description,
+      this.newContentForm.value.author,
+      this.newContentForm.value.releasedate,
       this.newContentForm.value.duration,
-      this.newContentForm.value.description
+      this.newContentForm.value.picturelink,
+      this.newContentForm.value.rate,
+      
     );
     console.log(newContent);
 
     this.contentService.createNewContent(newContent).subscribe(() => {
       console.log("le contenu a été créé")
-      this.router.navigateByUrl('/my-contents')
+      this.router.navigateByUrl('/content')
     });
   }
 }
