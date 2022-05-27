@@ -25,7 +25,7 @@ export class ContentService {
   getAllContents(): Observable<Content[]> {
     const token = localStorage.getItem("token");
     
-    return this.http.get<Content[]>(`${this.urlApi}/api/content/personnal`, 
+    return this.http.get<Content[]>(`${this.urlApi}/my-contents`, 
       {headers : { Authorization : `Bearer ${token}`}}
     )
   }

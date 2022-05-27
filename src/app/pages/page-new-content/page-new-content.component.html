@@ -1,7 +1,7 @@
 <h1>Create new content</h1>
 <form class="mt-5 col-md-6 m-auto" [formGroup]="newContentForm" (ngSubmit)="onSubmitForm()">
     <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <label for="name" class="form-label">Nom</label>
         <div class="input-group">
             <input placeholder="entrer le nom du contenu" formControlName="name" type="text" class="form-control"
                 aria-describedby="userHelp" id="name">
@@ -14,23 +14,16 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="author" class="form-label">Author</label>
-            <div class="input-group">
-                <input placeholder="entrer le nom de l'auteur" formControlName="author" type="text"
-                    class="form-control" aria-describedby="userHelp" id="author">
-            </div>
-        </div>
-        <div class="mb-3">
             <label for="duration" class="form-label">Durée</label>
             <div class="input-group">
-                <input placeholder="entrer la durée du contenu" formControlName="duration" type="number" class="form-control"
+                <input placeholder="entrer la durée en minute du contenu" formControlName="duration" type="number" class="form-control"
                     aria-describedby="userHelp" id="duration">
             </div>
         </div>
         <div class="mb-3">
             <label for="rate" class="form-label">Note</label>
             <div class="input-group">
-                <input placeholder="entrer la durée du contenu" formControlName="rate" type="number" class="form-control"
+                <input placeholder="entrer la note sur 5 du contenu" formControlName="rate" type="number" class="form-control"
                     aria-describedby="userHelp" id="rate">
             </div>
         </div>

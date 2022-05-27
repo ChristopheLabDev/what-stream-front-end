@@ -2,16 +2,14 @@ export class Content {
     id?: string;
     name: string;
     description: string;
-    author: string;
     releasedate: string;
-    duration: string;
+    duration: number;
     picturelink: string;
-    rate: string;
+    rate: number;
 
-    constructor(paramName: string, paramDescription: string, paramAuthor: string, paramReleasedate: string,  paramDuration: string, paramPicturelink: string, paramRate: string) {
+    constructor(paramName: string, paramDescription: string, paramReleasedate: string,  paramDuration: number, paramPicturelink: string, paramRate: number) {
         this.name = paramName;
         this.description = paramDescription;
-        this.author = paramAuthor;
         this.releasedate = paramReleasedate;
         this.duration = paramDuration;
         this.picturelink = paramPicturelink;

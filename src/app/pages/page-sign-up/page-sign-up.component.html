@@ -1,6 +1,12 @@
-<h1>Sign up</h1>
+<h1>Sign-Up</h1>
 <form class="mt-5 col-md-6 m-auto" [formGroup]="signUpForm" (ngSubmit)="onSubmitForm()">
     <div class="mb-3">
+        <label for="pseudo" class="form-label">pseudo</label>
+        <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input placeholder="entrer votre pseudo" formControlName="userName" type="text" class="form-control"
+                aria-describedby="userHelp" id="pseudo">
+        </div>
         <label for="username" class="form-label">Username</label>
         <div class="input-group">
             <span class="input-group-text">@</span>

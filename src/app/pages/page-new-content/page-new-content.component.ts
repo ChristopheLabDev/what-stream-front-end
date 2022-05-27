@@ -21,7 +21,6 @@ export class PageNewContentComponent implements OnInit {
     this.newContentForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
-      author: ['', Validators.required],
       releasedate: [''],
       duration: ['', Validators.required],
       picturelink: [''],
@@ -33,18 +32,16 @@ export class PageNewContentComponent implements OnInit {
     const newContent = new Content(
       this.newContentForm.value.name,
       this.newContentForm.value.description,
-      this.newContentForm.value.author,
       this.newContentForm.value.releasedate,
       this.newContentForm.value.duration,
       this.newContentForm.value.picturelink,
       this.newContentForm.value.rate,
-      
     );
-    console.log(newContent);
+   // console.log(newContent);
 
     this.contentService.createNewContent(newContent).subscribe(() => {
       console.log("le contenu a été créé")
-      this.router.navigateByUrl('/content')
+      this.router.navigateByUrl('/new-content')
     });
   }
 }
