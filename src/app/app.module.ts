@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageMyContentsComponent } from './pages/page-my-contents/page-my-contents.component';
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
+import { PageUpdateContentComponent } from './pages/page-update-content/page-update-content.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component
     PageNewContentComponent,
     PageMyContentsComponent,
     PageSignInComponent,
-    PageSignUpComponent
+    PageSignUpComponent,
+    PageUpdateContentComponent
   ],
   imports: [
     BrowserModule,

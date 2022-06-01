@@ -6,6 +6,7 @@ import { PageMyContentsComponent } from './pages/page-my-contents/page-my-conten
 import { PageNewContentComponent } from './pages/page-new-content/page-new-content.component';
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
+import { PageUpdateContentComponent } from './pages/page-update-content/page-update-content.component';
 
 
 const routes: Routes = [
@@ -14,8 +15,10 @@ const routes: Routes = [
   // { path: 'new-content', canActivate:[AuthGuard], component: PageNewContentComponent },
   { path: 'new-content',  component: PageNewContentComponent },
   { path: 'my-contents',  component: PageMyContentsComponent },
+  { path: 'update-content/:id-content',  component: PageUpdateContentComponent },
   { path: 'sign-in',  component: PageSignInComponent },
   { path: 'sign-up',  component: PageSignUpComponent },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

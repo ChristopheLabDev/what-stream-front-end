@@ -1,0 +1,35 @@
+<h1>Update content</h1>
+<form *ngIf="updateContentForm" class="mt-5 col-md-6 m-auto" [formGroup]="updateContentForm" (ngSubmit)="onSubmitForm()">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nom</label>
+        <div class="input-group">
+            <input placeholder="entrer le nom du contenu" formControlName="name" type="text" class="form-control"
+                aria-describedby="userHelp" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <div class="input-group">
+                <input placeholder="entrer la description du contenu" formControlName="description" type="text"
+                    class="form-control" aria-describedby="userHelp" id="description">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Durée</label>
+            <div class="input-group">
+                <input placeholder="entrer la durée en minute du contenu" formControlName="duration" type="number"
+                    class="form-control" aria-describedby="userHelp" id="duration">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="rate" class="form-label">Note</label>
+            <div class="input-group">
+                <input placeholder="entrer la note sur 5 du contenu" formControlName="rate" type="number"
+                    class="form-control" aria-describedby="userHelp" id="rate">
+            </div>
+        </div>
+
+        <div class="d-grid col-12 col-md-2 ms-auto">
+            <button [disabled]="updateContentForm.invalid" type="submit" class="btn btn-primary text-nowrap">Update</button>
+        </div>
+    </div>
+</form>

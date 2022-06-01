@@ -1,23 +1,30 @@
 <!--<p *ngFor="let content of listContents">
     {{ content.name }}
 </p>-->
-<h1>Page de mes fiches de contenus</h1>
+<h1>Liste de mes fiches de contenus</h1>
 <table class="table">
     <thead>
         <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Name</th>
             <th>releasedate</th>
             <th>duration</th>
             <th>picturelink</th>
             <th>rate</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let content of listContents">
+            <td>{{ content.name }}</td>
+            <td>{{ content.description }}</td>
+            <td>{{ content.releasedate }}</td>
+            <td>{{ content.duration }}</td>
+            <td>{{ content.rate }}</td>
+            <td>{{ content.id }}</td>
             <td>
-                
+                <button class="btn btn-warning" routerLink="/update-content/{{content.id}}">Modifier</button>
             </td>
         </tr>
     </tbody>

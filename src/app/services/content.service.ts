@@ -25,7 +25,7 @@ export class ContentService {
   getAllContents(): Observable<Content[]> {
     const token = localStorage.getItem("token");
     
-    return this.http.get<Content[]>(`${this.urlApi}/my-contents`, 
+    return this.http.get<Content[]>(`${this.urlApi}/content/my-contents`, 
       {headers : { Authorization : `Bearer ${token}`}}
     )
   }
@@ -33,7 +33,7 @@ export class ContentService {
   getContentById(contentId: string): Observable<Content> {
     const token = localStorage.getItem("token");
     
-    return this.http.get<Content>(`${this.urlApi}/api/content/${contentId}`, 
+    return this.http.get<Content>(`${this.urlApi}/content/update-content/${contentId}`, 
       {headers : { Authorization : `Bearer ${token}`}}
     )
   }
@@ -43,8 +43,11 @@ export class ContentService {
     
     const body = {
       name: content.name,
+      description: content.description,
+      releasedate: content.releasedate,
       duration: content.duration,
-      description: content.description
+      picturelink: content.picturelink,
+      rate: content.rate,
     }
 
     return this.http.put<any>(`${this.urlApi}/content/${content.id}`,
