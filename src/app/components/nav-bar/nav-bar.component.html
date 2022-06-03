@@ -7,10 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse static-top" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="provider" routerLinkActive="active">Plateformes de streaming</a>
-                    </li>
+                <ul class="navbar-nav" *ngIf="isAuthenticated == true" >
                     <li class="nav-item">
                         <a class="nav-link" routerLink="my-contents" routerLinkActive="active">Mes fiches de contenus</a>
                     </li>

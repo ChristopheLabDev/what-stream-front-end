@@ -14,6 +14,7 @@ import { PageMyContentsComponent } from './pages/page-my-contents/page-my-conten
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
 import { PageUpdateContentComponent } from './pages/page-update-content/page-update-content.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PageUpdateContentComponent } from './pages/page-update-content/page-upd
     PageMyContentsComponent,
     PageSignInComponent,
     PageSignUpComponent,
-    PageUpdateContentComponent
+    PageUpdateContentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

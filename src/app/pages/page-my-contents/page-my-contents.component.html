@@ -24,7 +24,10 @@
             <td>{{ content.rate }}</td>
             <td>{{ content.id }}</td>
             <td>
-                <button class="btn btn-warning" routerLink="/update-content/{{content.id}}">Modifier</button>
+                <a class="btn btn-warning" [routerLink]="['/update-content/',content.id]">Modifier</a>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="onClickDeleteContent(content.id)">Supprimer</button>
             </td>
         </tr>
     </tbody>

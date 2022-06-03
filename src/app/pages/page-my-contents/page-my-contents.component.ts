@@ -18,6 +18,30 @@ export class PageMyContentsComponent implements OnInit {
         this.listContents = resp;
     })
   }
+  onClickDeleteContent(contentId: string | undefined) {
+    if (contentId) {
+    this.contentService.deleteContent(contentId).subscribe({
+        next : (resp) => {
+          console.log(resp);
+          // Todo 
+          /**
+           * Rechercher dans le tableau this.listCountries
+           * l'objet country avec l'_id == countryId
+           * et le supprimer pour que notre liste de pays
+           * n'affiche plus le pays supprimé
+           */
+
+           //Version plus détaillée 
+           const detailsNewArrayFiltered = this.listContents.filter((content) => {
+             if(content.id !==  contentId) {
+               return content;
+             } else return;
+           });
+           this.listContents = detailsNewArrayFiltered;
+    },
+        error: (err) => { console.error(err)}
+      })
+    }
+  }
 
 }
-

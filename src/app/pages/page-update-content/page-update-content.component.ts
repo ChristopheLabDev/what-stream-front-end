@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Content } from 'src/app/models/content';
 import { ContentService } from 'src/app/services/content.service';
 
@@ -14,6 +15,7 @@ export class PageUpdateContentComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
      private contentService: ContentService,
+     private router: Router,
      private fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -35,8 +37,8 @@ export class PageUpdateContentComponent implements OnInit {
   }
   onSubmitForm() {
     const contentToUpdate = this.updateContentForm.value;
-    this.contentService.updateContent(contentToUpdate).subscribe((resp) =>{
-      alert(resp.message);
+    this.contentService.updateContent(contentToUpdate).subscribe(() =>{
+    this.router.navigateByUrl('/my-contents');
     })
   }
 }

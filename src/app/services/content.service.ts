@@ -33,7 +33,7 @@ export class ContentService {
   getContentById(contentId: string): Observable<Content> {
     const token = localStorage.getItem("token");
     
-    return this.http.get<Content>(`${this.urlApi}/content/update-content/${contentId}`, 
+    return this.http.get<Content>(`${this.urlApi}/content/${contentId}`, 
       {headers : { Authorization : `Bearer ${token}`}}
     )
   }
