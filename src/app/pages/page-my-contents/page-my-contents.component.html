@@ -5,24 +5,27 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>ID du contenu</th>
+            <th>Nom</th>
             <th>Description</th>
-            <th>releasedate</th>
-            <th>duration</th>
-            <th>picturelink</th>
-            <th>rate</th>
+            <th>date de sortie</th>
+            <th>durée</th>
+            <th>lien image</th>
+            <th>Note</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let content of listContents">
+            <td>{{ content.id }}</td>
             <td>{{ content.name }}</td>
             <td>{{ content.description }}</td>
             <td>{{ content.releasedate }}</td>
             <td>{{ content.duration }}</td>
+            <td></td>
             <td>{{ content.rate }}</td>
-            <td>{{ content.id }}</td>
+            
             <td>
                 <a class="btn btn-warning" [routerLink]="['/update-content/',content.id]">Modifier</a>
             </td>

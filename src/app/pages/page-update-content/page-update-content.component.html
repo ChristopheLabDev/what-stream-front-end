@@ -21,6 +21,13 @@
             </div>
         </div>
         <div class="mb-3">
+            <label for="description" class="form-label">Date de sortie</label>
+            <div class="input-group">
+                <input placeholder="entrer la date de sortie du contenu" formControlName="releasedate" type="date"
+                    class="form-control" aria-describedby="userHelp" id="releasedate">
+            </div>
+        </div>
+        <div class="mb-3">
             <label for="rate" class="form-label">Note</label>
             <div class="input-group">
                 <input placeholder="entrer la note sur 5 du contenu" formControlName="rate" type="number"
@@ -29,7 +36,7 @@
         </div>
 
         <div class="d-grid col-12 col-md-2 ms-auto">
-            <button [disabled]="updateContentForm.invalid" type="submit" class="btn btn-primary text-nowrap">Update</button>
+            <button [disabled]="updateContentForm.invalid" type="submit" class="btn btn-primary text-nowrap">Mettre à jour</button>
         </div>
     </div>
 </form>
